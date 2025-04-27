@@ -1,0 +1,17 @@
+Why IDs sometimes "skip" in DBs:
+Deleted records:
+
+If a flight record was deleted, its ID is gone forever.
+
+Example: If flight with ID 13859 was deleted → you'll see 13858, 13860 but no 13859.
+
+Failed insertions:
+Sometimes a new flight is created but the insert fails (e.g., database error).
+The ID counter still goes up, but the data never lands in the table.
+Batch insert/update issues:
+When inserting a big batch of flights, some might fail validation or duplication checks.
+IDs might already be reserved before the check happens.
+
+Manual corrections:
+In production databases, sometimes admins manually clean up weird flights
+(like test flights) and remove rows.
