@@ -88,6 +88,7 @@ def plot_heatmap_of_routes():
     plt.show()
 
 
+
 def plot_map_of_routes():
     engine = create_engine('sqlite:///flights.sqlite3')
 
