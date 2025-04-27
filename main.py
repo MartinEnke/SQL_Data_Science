@@ -1,7 +1,7 @@
 import data
 from datetime import datetime
 import sqlalchemy
-import bar_graph
+import visualization
 
 SQLITE_URI = 'sqlite:///flights.sqlite3'
 IATA_LENGTH = 3
@@ -73,27 +73,30 @@ def flights_by_date(data_manager):
 
 def show_bar_graph(data_manager):
     """
-    Shows the bar graph for percentage of delayed flights per airline
+    Displays the bar graph for percentage of delayed flights per airline
     """
-    bar_graph.plot_delays_by_airline()
+    visualization.plot_delays_by_airline()
 
 
 def show_hourly_bar_graph(data_manager):
     """
-    Shows the bar graph for percentage of delayed flights by hour of day
+    Displays a bar graph showing the percentage of delayed flights by hour of the day.
     """
-    bar_graph.plot_delays_by_hour()
+    visualization.plot_delays_by_hour()
 
 
 def show_heatmap_of_routes(data_manager):
     """
-    Shows a map for percentage of heat distributed on routes
+    Displays a heatmap showing the percentage of delayed flights distributed across flight routes.
     """
-    bar_graph.plot_heatmap_of_routes()
+    visualization.plot_heatmap_of_routes()
 
 
 def show_map_of_routes(data_manager):
-    bar_graph.plot_map_of_routes()
+    """
+    Displays a map showing major delayed routes across the USA.
+    """
+    visualization.plot_map_of_routes()
 
 
 def print_results(results):
