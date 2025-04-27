@@ -1,3 +1,12 @@
+Extra Pro Tip:
+You can always check column names manually by running:
+
+PRAGMA table_info(airports);
+in SQLite Browser!
+✅ It lists all columns in the table.
+
+
+
 Why IDs sometimes "skip" in DBs:
 Deleted records:
 
