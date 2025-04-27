@@ -55,3 +55,32 @@ def plot_delays_by_hour():
     plt.colorbar = False  # no colorbar needed for bar chart
     plt.tight_layout()
     plt.show()
+
+
+def plot_heatmap_of_routes():
+    engine = create_engine('sqlite:///flights.sqlite3')
+
+    query = """
+    SELECT 
+        flights.origin_airport AS origin,
+        flights.destination_airport AS destination,
+        COUNT(flights.id) AS total_flights,
+        SUM(CASE WHEN flights.departure_delay > 20 THEN 1 ELSE 0 END) AS delayed_flights
+    FROM flights
+    GROUP BY origin, destination
+    """
+
+    df = pd.read_sql(query, engine)
+
+    df['percent_delayed'] = (df['delayed_flights'] / df['total_flights']) * 100
+
+    # Pivot the data for heatmap
+    pivot_df = df.pivot(index='origin', columns='destination', values='percent_delayed')
+
+    plt.figure(figsize=(9,8))
+    sns.heatmap(pivot_df, cmap="Reds", linewidths=0.5)
+    plt.title('Heatmap: % Delayed Flights by Route (Origin → Destination)')
+    plt.ylabel('Origin Airport')
+    plt.xlabel('Destination Airport')
+    plt.tight_layout()
+    plt.show()

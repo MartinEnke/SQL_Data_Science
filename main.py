@@ -85,6 +85,12 @@ def show_hourly_bar_graph(data_manager):
     bar_graph.plot_delays_by_hour()
 
 
+def show_heatmap_of_routes(data_manager):
+    """
+    Shows a map for percentage of heat distributed on routes
+    """
+    bar_graph.plot_heatmap_of_routes()
+
 def print_results(results):
     """
     Get a list of flight results (List of dictionary-like objects from SQLAachemy).
@@ -144,7 +150,8 @@ FUNCTIONS = {
     4: (delayed_flights_by_airport, "Delayed flights by origin airport"),
     5: (show_bar_graph, "Show bar graph: delayed flights per airline"),
     6: (show_hourly_bar_graph, "Show bar graph: delayed flights by hour of day"),
-    7: (quit, "Exit")
+    7: (show_heatmap_of_routes, "Show heatmap: delayed flights by route"),
+    8: (quit, "Exit")
 }
 
 def main():
