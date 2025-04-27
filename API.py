@@ -13,7 +13,17 @@ engine = create_engine('sqlite:///flights.sqlite3')
 
 @app.route('/')
 def home():
-    return "Hello Flight Analyzer API!"
+    """
+    Returns a JSON welcome message for the Flight Analyzer API.
+    """
+    return jsonify({
+        "message": "Welcome to the Flight Delay Analyzer API!",
+        "available_endpoints": {
+            "/delays_by_airline": "Get % of delayed flights by airline",
+            "/delays_by_hour": "Get % of delayed flights by hour"
+        },
+        "status": "running"
+    })
 
 @app.route('/delays_by_airline')
 def delays_by_airline():
