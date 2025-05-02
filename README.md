@@ -1,14 +1,17 @@
+
+# ✈️ Flight Delay Analyzer
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?logo=sqlite)
 ![Matplotlib](https://img.shields.io/badge/Graphing-Matplotlib-orange?logo=matplotlib)
 ![Seaborn](https://img.shields.io/badge/Visualization-Seaborn-blueviolet?logo=seaborn)
 ![Folium](https://img.shields.io/badge/Mapping-Folium-brightgreen?logo=leaflet)
 
-# ✈️ Flight Delay Analyzer
-
 Analyze and visualize US domestic flight delays across the USA using SQL, Python, and interactive maps.
 
 <img src="./FDA-banner.png" alt="Flight Delay Analyzer Banner" style="width:100%; height:auto;">
+
+
 
 
 ---
@@ -65,7 +68,16 @@ python main.py
 
 ## Project structure:
 
-/ (root) │ ├── main.py ├── bar_graph.py ├── data.py (if needed) ├── flights.sqlite3 ├── README.md ├── USA delay_routes.png
+```
+Flight_Delay_Analyzer/
+├── main.py                     # FastAPI app file (entry point)
+├── bar_graph.py                # (Optional) If used for generating bar graphs
+├── data.py                     # Database handling file (if needed)
+├── flights.sqlite3             # SQLite database file
+├── README.md                   # Project documentation and setup instructions
+└── USA_delay_routes.png        # Image file (optional, if used for route map)
+```
+
 ## Future Improvements
 
 Add delay severity icons to maps
