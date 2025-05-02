@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, Response
 import pandas as pd
 from sqlalchemy import create_engine
-import json
 
 
 app = Flask(__name__)

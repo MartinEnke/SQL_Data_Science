@@ -3,7 +3,7 @@ You can always check column names manually by running:
 
 PRAGMA table_info(airports);
 in SQLite Browser!
-✅ It lists all columns in the table.
+It lists all columns in the table.
 
 
 
